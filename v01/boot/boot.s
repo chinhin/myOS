@@ -26,8 +26,8 @@ MBOOT_CHECKSUM 		equ 	- (MBOOT_HEADER_MAGIC + MBOOT_HEADER_FLAGS)
 ; 偏移量  类型  域名        备注
 ;
 ;   0     u32   magic       必需
-;   4     u32   flags       必需 
-;   8     u32   checksum    必需 
+;   4     u32   flags       必需
+;   8     u32   checksum    必需
 ;
 ; 我们只使用到这些就够了，更多的详细说明请参阅 GNU 相关文档
 ;-----------------------------------------------------------
