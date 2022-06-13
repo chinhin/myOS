@@ -9,6 +9,11 @@ void kernel_main(void) {
 
 	for(i=0; i<25; i++)
 	{
-		printf("Hello, kernel World!%d\n", i);
+		printf("Hello %2d, kernel World!\n", i);
 	}
+
+	console_write_hex(22);
+	printf("\n");
+	console_write_dec(22);
+	printf("\n");
 }
