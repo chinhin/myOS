@@ -2,6 +2,7 @@
 #define _STDIO_H 1
 
 #include <sys/cdefs.h>
+#include "elf.h"
 
 #define EOF (-1)
 
@@ -11,6 +12,12 @@ extern "C" {
 
 int printf(const char* __restrict, ...);
 void puts(const char*);
+
+// 初始化 Debug 信息
+void init_debug();
+
+// 打印当前的段存器值
+void print_cur_status();
 
 #ifdef __cplusplus
 }

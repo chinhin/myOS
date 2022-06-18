@@ -22,12 +22,14 @@ stack_top:
 # The kernel entry point.
 .section .text
 .global _start
+.global glb_mboot_ptr
 .type _start, @function
 _start:
 	movl $stack_top, %esp
 
 	# Call the global constructors.
 	call _init
+	movl %ebx, (glb_mboot_ptr)
 
 	# Transfer control to the main kernel.
 	call kernel_main
@@ -37,3 +39,6 @@ _start:
 1:	hlt
 	jmp 1b
 .size _start, . - _start
+glb_mboot_ptr:
+.skip 4
+
